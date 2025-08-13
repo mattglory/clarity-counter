@@ -1,0 +1,25 @@
+[project]
+name = "counter"
+description = "A secure and testable smart contract that implements a counter with owner-only access control, written in Clarity."
+authors = ["Glory"]
+telemetry = false
+cache_dir = ".cache"
+requirements = []
+
+[contracts.counter]
+path = "contracts/counter.clar"
+clarity_version = 3
+epoch = "latest"
+
+[repl.analysis]
+passes = ["check_checker"]
+
+[repl.analysis.check_checker]
+strict = true
+trusted_sender = false
+trusted_caller = false
+callee_filter = false
+
+[repl.remote_data]
+enabled = false
+api_url = "https://api.hiro.so"
