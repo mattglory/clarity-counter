@@ -1,0 +1,36 @@
+{
+  "name": "clarity-counter",
+  "version": "1.1.0",
+  "description": "A secure and testable smart contract built with Clarity on the Stacks blockchain. Includes full test coverage and grant-ready documentation.",
+  "type": "module",
+  "private": false,
+  "author": "Glory",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattglory/clarity-counter.git"
+  },
+  "keywords": [
+    "clarity",
+    "stacks",
+    "smart-contract",
+    "counter",
+    "blockchain",
+    "testing",
+    "grant-ready"
+  ],
+  "scripts": {
+    "test": "vitest run",
+    "test:report": "vitest run -- --coverage --costs",
+    "test:watch": "chokidar \"tests/**/*.ts\" \"contracts/**/*.clar\" -c \"npm run test:report\""
+  },
+  "dependencies": {
+    "@stacks/transactions": "^7.0.6",
+    "chokidar-cli": "^3.0.0",
+    "vitest": "^3.1.3",
+    "vitest-environment-clarinet": "^2.3.0"
+  },
+  "devDependencies": {
+    "@hirosystems/clarinet-sdk": "^3.5.0"
+  }
+}
